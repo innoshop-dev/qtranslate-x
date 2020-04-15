@@ -446,6 +446,7 @@ function qtranxf_detect_language_front( &$url_info ) {
 function qtranxf_setcookie_language( $lang, $cookie_name, $cookie_path, $cookie_domain = null, $secure = false ) {
 	//qtranxf_dbg_log('qtranxf_setcookie_language: lang='.$lang.'; cookie_name='.$cookie_name.'; cookie_path='.$cookie_path);
 	setcookie( $cookie_name, $lang, time() + 31536000, $cookie_path, $cookie_domain, $secure );//one year
+	return true;
 	//two weeks 1209600
 }
 
