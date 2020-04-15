@@ -701,6 +701,17 @@ function qtranxf_is_permalink_structure_query() {
 	return empty( $permalink_structure ) || strpos( $permalink_structure, '?' ) !== false || strpos( $permalink_structure, 'index.php' ) !== false;
 }
 
+if ( ! function_exists( 'qtranxf_windows_os' ) ) {
+	function qtranxf_windows_os() {
+		static $windows_os;
+		if ( ! isset( $windows_os ) ) {
+			$windows_os = strtoupper( substr( PHP_OS, 0, 3 ) ) === 'WIN';
+		}
+
+		return $windows_os;
+	}
+}
+
 function qtranxf_loadConfig() {
 	global $qtranslate_options, $q_config;
 	qtranxf_set_default_options( $qtranslate_options );
